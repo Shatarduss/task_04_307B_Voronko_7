@@ -139,13 +139,15 @@ for t in range(1, maxTime):
     # Граничные условия для поля E
     # Слева
     Ez[0] = (k1[0] * (k2[0] * (Ez[2] + oldEzL2[0]) +
-                      k3[0] * (oldEzL1[0] + oldEzL1[2] - Ez[1] - oldEzL2[1]) -
+                      k3[0] * (oldEzL1[0] + oldEzL1[2] - 
+                               Ez[1] - oldEzL2[1]) -
                       k4[0] * oldEzL1[1]) - oldEzL2[2])
     oldEzL2[:] = oldEzL1[:]
     oldEzL1[:] = Ez[0: 3]
     # Справа
     Ez[-1] = (k1[-1] * (k2[-1] * (Ez[-3] + oldEzR2[-1]) +
-                        k3[-1] * (oldEzR1[-1] + oldEzR1[-3] - Ez[-2] - oldEzR2[-2]) -
+                        k3[-1] * (oldEzR1[-1] + oldEzR1[-3] - 
+                                  Ez[-2] - oldEzR2[-2]) -
                         k4[-1] * oldEzR1[-2]) - oldEzR2[-3])
 
     oldEzR2[:] = oldEzR1[:]
